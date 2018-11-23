@@ -1,6 +1,8 @@
 #ifndef MPAGSCIPHER_CIPHER_HPP
 #define MPAGSCIPHER_CIPHER_HPP
 
+#include <string>
+
 #include "CipherMode.hpp"
 
 /**
@@ -17,19 +19,12 @@ class Cipher {
 	public:
 		// Default constructors
 		Cipher() = default;
-		Cipher(const Cipher& rhs) = default;
-		Cipher(Cipher&& rhs) = default;
-
-		/**
-		 * Create a new Cipher, converting the given string into the key
-		 *
-		 * \param key the string to convert into the key to be used in the cipher
-		 */
-		virtual Cipher(const std::string& key) = 0;
+		Cipher(const Cipher&/* rhs */) = default;
+		Cipher(Cipher&&/* rhs */) = default;
 
 		// Default assignment
-		Cipher& operator=(const Cipher& rhs) == default;
-		Cipher& operator=(Cipher&& rhs) = default;
+		Cipher& operator=(const Cipher&/* rhs */) = default;
+		Cipher& operator=(Cipher&&/* rhs */) = default;
 
 		// Default destructor
 		virtual ~Cipher() = default;
