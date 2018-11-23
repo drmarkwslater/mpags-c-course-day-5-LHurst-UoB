@@ -13,11 +13,14 @@ VigenereCipher::VigenereCipher( const std::string& key ) {
 
 void VigenereCipher::setKey ( const std::string& key ) {
 	// Store the key
+	key_ = key;
+
 	// Make sure key is uppercase
+	std::transform( std::begin(key_), std::end(key_), std::begin(key_), ::toupper );
+
 	// Remove non-alphabet characters
-	for ( char ch : key ) {
-		key_ += transformChar(ch);
-	}
+	key_.erase( std::remove_if( std::begin(key_), std::end(key_), [](char c){ return !std::isalpha(c); } ),
+		std::end(key_) );
 
 	// Check if the key is empty and replace with default if so
 	if ( key_.empty() ) {
