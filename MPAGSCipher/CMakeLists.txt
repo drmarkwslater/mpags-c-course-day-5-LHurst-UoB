@@ -16,6 +16,8 @@ add_library(MPAGSCipher STATIC
   VigenereCipher.hpp
   VigenereCipher.cpp
   Cipher.hpp
+  CipherFactory.cpp
+  CipherFactory.hpp
   )
 
 target_include_directories(MPAGSCipher
