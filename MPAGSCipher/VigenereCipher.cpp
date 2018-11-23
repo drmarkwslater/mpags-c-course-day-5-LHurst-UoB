@@ -29,7 +29,7 @@ void VigenereCipher::setKey ( const std::string& key ) {
 	}
 	
 	// loop over the key
-	for ( char ch : key ) {
+	for ( char ch : key_ ) {
 		// Find the letter position in the alphabet
 		int position {-1};
 		for ( size_t i = 0; i < Alphabet::size; i++ ) {
